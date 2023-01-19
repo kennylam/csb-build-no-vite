@@ -1,10 +1,8 @@
 name: e2e-integration
 
 on:
-  push:
-    branches: [ main, release/* ]
-  schedule:
-    - cron: '0 20 * * 1-5'
+  pull_request:
+    branches: [main]
 
 concurrency:
   group: e2e-integration-${{ github.ref }}
@@ -16,14 +14,14 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        node-version: ['14.x']
+        node-version: ["14.x"]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: "yarn"
       - name: Install dependencies
         run: yarn install
       - name: Build
@@ -45,14 +43,14 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        node-version: [ '14.x' ]
+        node-version: ["14.x"]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: "yarn"
       - name: Install dependencies
         run: yarn install
       - name: Build
