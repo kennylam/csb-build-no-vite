@@ -1,6 +1,8 @@
 name: e2e-integration
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -10,8 +12,7 @@ concurrency:
 
 jobs:
   web-components-vite:
-    if: github.repository == 'kennylam/csb-build-no-vite'
-    runs-on: macos-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         node-version: ["14.x"]
@@ -39,8 +40,7 @@ jobs:
         with:
           status: ${{ job.status }}
   react-vite:
-    if: github.repository == 'kennylam/csb-build-no-vite'
-    runs-on: macos-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         node-version: ["14.x"]
