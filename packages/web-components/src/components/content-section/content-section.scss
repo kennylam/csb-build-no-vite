@@ -1,0 +1,36 @@
+//
+// Copyright IBM Corp. 2020, 2022
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@import '@carbon/ibmdotcom-styles/scss/globals/vars';
+@import '@carbon/ibmdotcom-styles/scss/internal/content-section/content-section';
+
+:host(#{$dds-prefix}-content-section),
+:host(#{$dds-prefix}-card-section-carousel),
+:host(#{$dds-prefix}-content-section-heading),
+:host(#{$dds-prefix}-content-section-copy) {
+  display: block;
+  overflow-x: hidden;
+}
+
+:host(#{$dds-prefix}-content-section) {
+  &[with-link-list] {
+    .#{$prefix}--content-section__body {
+      padding: 0 $spacing-05;
+    }
+  }
+
+  ::slotted(#{$dds-prefix}-content-block-simple) {
+    padding-bottom: $spacing-10;
+  }
+
+  ::slotted(#{$dds-prefix}-link-list) {
+    @include carbon--breakpoint-down(md) {
+      display: block;
+      margin: 0 $spacing-05;
+    }
+  }
+}

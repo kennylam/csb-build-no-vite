@@ -1,0 +1,303 @@
+import { Preview, Props, Description, Story } from '@storybook/addon-docs/blocks';
+import '../text-cta';
+import '../card-cta';
+import '../feature-cta';
+import contributing from '../../../../../../docs/contributing-license.md';
+import { cdnJs, cdnCss } from '../../../globals/internal/storybook-cdn';
+
+
+# CTA
+
+> The CTA component is used to select from various CTA link types – text, cards,
+> and buttons – as well as defining their behavior, such as anchor links,
+> videos, and external links.
+
+## Getting started
+
+The CTA contains every style and type of CTA available in the Carbon for IBM.com library. 
+The default CTA style is `text`, which provides a basic Link with icon component.
+
+In order to use the desired component, modify the `cta-style` attribute to one of the following:
+
+* `text`
+* `button`
+* `card`
+* `card-link`
+* `feature`
+
+### JS (via import)
+
+```javascript
+import '@carbon/ibmdotcom-web-components/es/components/cta/index.js';
+```
+
+<Description markdown={`${cdnJs({ components: ['cta'] })}`} />
+
+<Description markdown={`${cdnCss()}`} />
+
+## `Text`
+
+CTA Text is the most basic version of CTA, presented as a simple link.
+
+> 💡 Check our
+> [CodeSandbox](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-text)
+> example implementation.
+
+[![Edit @carbon/ibmdotcom-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-text)
+
+### HTML
+
+```html
+<dds-cta cta-style='text' href="https://www.ibm.com/" cta-type="local">
+  Copy text
+</dds-cta>
+```
+
+### Props
+
+<Props of="dds-text-cta" />
+
+## `Button`
+
+CTA Button is a version of CTA presented as a button.
+
+> 💡 Check our
+> [CodeSandbox](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-button)
+> example implementation.
+
+[![Edit @carbon/ibmdotcom-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-button)
+
+### HTML
+
+```html
+<dds-cta cta-style='button' cta-type="local" kind="tertiary" href="https://www.example.com">
+  Button CTA Copy
+</dds-cta>
+```
+
+### Props
+
+<Props of="dds-button-cta" />
+
+## Card CTA
+
+CTA Card is a version of CTA presented as a card.
+
+> 💡 Check our
+> [CodeSandbox](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-card)
+> example implementation.
+
+[![Edit @carbon/ibmdotcom-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-card)
+
+### HTML
+
+```html
+<dds-cta cta-style='card' href="https://www.ibm.com/" cta-type="local">
+  Copy text
+  <dds-card-cta-footer>
+    <svg
+      slot="icon"
+      focusable="false"
+      preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      aria-hidden="true"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+    </svg>
+  </dds-card-cta-footer>
+</dds-cta>
+```
+
+### Props
+
+<Props of="dds-card-cta" />
+
+## Card link CTA
+
+Card link CTA is a version of CTA presented as a card.
+
+> 💡 Check our
+> [CodeSandbox](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-card)
+> example implementation.
+
+[![Edit @carbon/ibmdotcom-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-card)
+
+### HTML
+
+```html
+<dds-cta cta-style='card-link' href="https://www.ibm.com/" cta-type="local">
+  <dds-card-link-heading>Heading text</dds-card-link-heading>
+    <dds-card-cta-footer>
+      <svg
+        slot="icon"
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        aria-hidden="true"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+      </svg>
+    </dds-card-cta-footer>
+</dds-cta>
+```
+
+### Props
+
+<Props of="dds-card-link-cta" />
+
+
+## Feature card CTA
+
+Feature card CTA is a version of CTA presented as a feature card.
+
+> 💡 Check our
+> [CodeSandbox](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-feature)
+> example implementation.
+
+[![Edit @carbon/ibmdotcom-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta-feature)
+
+### HTML
+
+```html
+<dds-cta cta-style='feature' href="https://www.ibm.com/" cta-type="local">
+  <dds-card-heading>This is a heading</dds-card-heading>
+  <dds-image
+    slot="image"
+    alt="Image alt text"
+    default-src="https://fpoimg.com/672x672?text=1:1&bg_color=ee5396&text_color=161616"
+  >
+  </dds-image>
+  <dds-feature-cta-footer>
+    <svg
+      slot="icon"
+      focusable="false"
+      preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      aria-hidden="true"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+    >
+      <path
+        d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+    </svg>
+  </dds-feature-cta-footer>
+</dds-cta>
+```
+
+The Feature Card for CTA can also use the 'large' variation, but be sure to at least include an eyebrow and heading.
+
+
+```html
+<dds-cta cta-style='feature' size='large' href="https://www.ibm.com/" cta-type="local">
+  <dds-card-eyebrow>This is an eyebrow</dds-card-eyebrow>
+  <dds-card-heading>This is a heading</dds-card-heading>
+  <dds-image
+    slot="image"
+    alt="Image alt text"
+    default-src="https://fpoimg.com/672x672?text=1:1&bg_color=ee5396&text_color=161616"
+  >
+  </dds-image>
+</dds-cta>
+```
+
+### Props
+
+<Props of="dds-feature-cta" />
+
+## Using a video player
+
+The `<dds-video-cta-container>` component lets you integrate `<dds-text-cta>`/`<dds-button-cta>`/`<dds-card-cta>`/`<dds-feature-cta>` with video player quickly.
+Only one `<dds-video-cta-container>` has to be put in application.
+Ensure that `<dds-video-cta-container>` contains all `<dds-text-cta>`/`<dds-button-cta>`/`<dds-card-cta>`/`<dds-feature-cta>`:
+
+## Using contact methods
+
+The various cta components allow the `type` attributes `email`, `schedule`, `chat`, and `call`, to perform their respective contact methods, but requires importing the contact module.
+
+```html
+<script src="https://www.ibm.com/common/digitaladvisor/cm-app/latest/cm-app.min.js" defer></script>
+```
+
+### JS (via import)
+
+```javascript
+import '@carbon/ibmdotcom-web-components/es/components/cta/video-cta-container.js';
+```
+
+<Description markdown={`${cdnJs({ components: ['cta','video-cta-container'] })}`} />
+
+<Description markdown={`${cdnCss()}`} />
+
+### HTML
+
+```html
+<dds-video-cta-container>
+  <dds-cta cta-style='text' cta-type="video" href="1_9h94wo6b"></dds-cta>
+</dds-video-cta-container>
+```
+
+> 💡 Check our
+> [CodeSandbox](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta/text)
+> example implementation.
+
+[![Edit @carbon/ibmdotcom-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/web-components/examples/codesandbox/components/cta/text)
+
+### `dds-cta-run-action` customization
+
+For more flexible solution that is better tailored to your application's needs,
+CTA components fire `dds-cta-run-action` custom event when user clicks on a CTA
+with `type="video"`. Application code can take care of creating/putting our
+video player component and working with our video player service API to put the
+video data into the video player component:
+
+```javascript
+import KalturaPlayerAPI from '@carbon/ibmdotcom-services/es/services/KalturaPlayer/KalturaPlayer.js';
+import '@carbon/ibmdotcom-web-components/es/components/cta/cta.js.js';
+import '@carbon/ibmdotcom-web-components/es/components/expressive-modal/index.js';
+import '@carbon/ibmdotcom-web-components/es/components/lightbox-media-viewer/lightbox-video-player.js';
+
+...
+
+document.addEventListener('dds-cta-run-action', async event => {
+  const videoId = event.detail.href;
+  const lightboxId = `lightbox-${videoId}`;
+  let lightboxElem = document.getElementById(lightboxId);
+  if (!lightboxElem) {
+    lightboxElem = document.createElement('dds-expressive-modal');
+    lightboxElem.size = 'full-width';
+    lightboxElem.innerHTML = `
+      <dds-expressive-modal-close-button></dds-expressive-modal-close-button>
+      <dds-lightbox-video-player id="lightbox-video-player-${videoId}"></dds-lightbox-video-player>
+    `;
+    document.body.appendChild(lightboxElem);
+    const videoTarget = document.createElement('div');
+    videoTarget.id = `video-target-${videoId}`;
+    videoTarget.className = 'bx--video-player__video';
+    const videoPlayer = document.getElementById(`lightbox-video-player-${videoId}`);
+    videoPlayer.appendChild(videoTarget);
+    const [videoData] = await Promise.all([
+      KalturaPlayerAPI.api(videoId),
+      KalturaPlayerAPI.embedMedia(videoId, videoTarget.id, true),
+    ]);
+    const { name, description, duration } = videoData;
+    videoPlayer.name = name;
+    videoPlayer.duration = duration;
+    videoPlayer.description = description;
+  }
+  lightboxElem.open = true;
+});
+```
+
+<Description markdown={contributing} />
