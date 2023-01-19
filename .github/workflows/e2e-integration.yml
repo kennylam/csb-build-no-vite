@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
+      - name: Install dependencies
+        run: yarn install
       - name: Run e2e codesandbox tests
         run: yarn test:e2e:build && yarn test:e2e:test:no-percy
         working-directory: packages/web-components
