@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  web-components:
+  web-components-vite:
     if: github.repository == 'carbon-design-system/carbon-for-ibm-dotcom'
     runs-on: macos-latest
     strategy:
@@ -38,7 +38,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           status: ${{ job.status }}
-  react:
+  react-vite:
     if: github.repository == 'carbon-design-system/carbon-for-ibm-dotcom'
     runs-on: macos-latest
     strategy:
