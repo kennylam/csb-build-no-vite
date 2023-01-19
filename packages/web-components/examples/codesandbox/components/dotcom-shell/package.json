@@ -7,8 +7,9 @@
   "main": "index.html",
   "scripts": {
     "clean": "rimraf node_modules dist .cache",
-    "start": "parcel index.html --port=9000 --no-hmr",
-    "build": "parcel build *.html --no-minify --public-url ./"
+    "dev": "vite",
+    "build": "vite build && cp cdn.html dist",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@carbon/ibmdotcom-web-components": "latest"
